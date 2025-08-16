@@ -1,0 +1,3 @@
+# Ignorar arquivo de variáveis de ambiente do Cypress
+cypress.env.json
+/node_modules
