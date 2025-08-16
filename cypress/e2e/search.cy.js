@@ -1,16 +1,13 @@
 describe('Funcionalidade de Busca da Khan Academy', () => {
   beforeEach(() => {
-    cy.visit('https://pt.khanacademy.org/');
-    
-    cy.get('body').then(($body) => {
-      if ($body.find('#onetrust-accept-btn-handler').length > 0) {
-        cy.get('#onetrust-accept-btn-handler').click();
-      }
-    });
+     cy.visit('https://pt.khanacademy.org/');
 
-    cy.get('[data-testid="navbar-search-button"]').should('be.visible').click();
+    cy.setCookie('OptanonAlertBoxClosed', new Date().toISOString());
+
+     cy.reload();
+
+     cy.get('[data-testid="navbar-search-button"]').should('be.visible').click();
   });
-
   it('CT-001: Deve realizar uma busca por "Matemática" e encontrar resultados', () => {
  
     const searchInputSelector = '[data-testid="page-search-box"]';

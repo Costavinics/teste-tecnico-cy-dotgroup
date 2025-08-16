@@ -1,12 +1,11 @@
 describe('Funcionalidade de Login da Khan Academy', () => {
   beforeEach(() => {
+
     cy.visit('https://pt.khanacademy.org/login');
-    
-    const cookieButtonSelector = 'button:contains("Aceitar todos os cookies")';
 
-    cy.get(cookieButtonSelector).should('be.visible').click();
+    cy.setCookie('OptanonAlertBoxClosed', new Date().toISOString());
 
-    cy.get(cookieButtonSelector).should('not.be.visible');
+    cy.reload();
   });
 
   it('CT-003: Deve realizar o login com sucesso usando credenciais válidas', () => {
