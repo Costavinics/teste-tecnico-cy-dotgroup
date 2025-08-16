@@ -37,7 +37,7 @@ Siga os passos abaixo para preparar o ambiente de testes.
 
 **1. Clonar o Repositório**
 ```bash
-git clone [URL_DO_SEU_REPOSITORIO_GIT]
+git clone [URL_REPOSITORIO_GIT]
 cd [NOME_DA_PASTA_DO_PROJETO]
 ```
 
